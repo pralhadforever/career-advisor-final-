@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Career Advisor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Custom CSS-->
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'CSS/styles.css'%}"type="text/css">
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="text" href="#">Career <span class="brand">Advisor</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="links" href="#contact">CONTACTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="links" href="{% url 'login_page' %}">SIGN IN</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      <section class="hero">
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12 col-md-7 col-lg-7">
+                     <div class="hero-header">
+                         <h2>Tomorrow Looks Better Because We're <span class="hero-head">Here to Help You. </span>Use Career Advisor to shape your dreams into reality.</h2>
+                     </div>
+                     <div class="more">
+                         <a href="#about">
+                            <button type = "button" class="btn" id="btns">About Career <span class="brand">Advisor</span></button>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-sm-12 col-md-12 col-md-12">
+                    <div class="scrolls">
+                        <a href="#" class="scroll-down" address="true"> 
+                          <img src="../static/Images/mouse_click.png" alt="">
+                        </a>
+                      </div>
+                 </div>
+             </div>
+         </div> 
+      </section>
+      <section id="about">
+        <div class="container" id="does">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="who">Who <span class="guide">We Are</span></h2>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="say">
+                  <p class="wassup" style="text-align: left;">
+                    Career advisor is a web application designed to assist individuals in making well-informed decisions regarding their career options based on their skills, goals, and interests.<br><br>
+                    With our career advisor, users gain access to:<br><br>
+                
+                    1) Skills Assessment: Our platform enables users to assess their skills, strengths, and areas for improvement. Through interactive assessments and self-evaluation tools, individuals can gain a deeper understanding of their abilities and identify areas they may want to focus on.<br>
+                    <br>
+                    2) Goal Setting: Setting clear and achievable career goals is crucial for professional success. Our career advisor assists users in defining their career aspirations and helps them create a roadmap towards their desired outcomes. By breaking down long-term goals into manageable steps, individuals can stay motivated and track their progress.<br>
+                    <br>
+                    3) Interest Exploration: Discovering one's true interests and passions is a vital aspect of career decision-making. Our web application provides various resources and activities to help users explore different industries, job roles, and fields of interest. By understanding their genuine interests, individuals can align their career paths with what truly excites and fulfills them.<br>
+                  </p>
+                </div>
+                
+                
+                <div class="login">
+                  <a href="{% url 'login_page' %}">
+                    <button type="button" class="btn btn-dark" id="btns">Let's Begin</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </section>
+      <section id="contact">
+        <div class="container" id="contain">
+          <div id="contactinfo">
+            <h1>Contact Info</h1>
+            <ul class="info">
+              <li>
+                <span><img src="../static/Images/location.png" /></span>
+                <span
+                  >New Baneshwor<br />
+                  Kathmandu, Nepal<br />
+                  44600</span
+                >
+              </li>
+              <li>
+                <span><img src="../static/Images/mail.png" /></span>
+                <span>career@advisor.com</span>
+              </li>
+              <li>
+                <span><img src="../static/Images/call.png" /></span>
+                <span>07-22-66-89-17</span>
+              </li>
+            </ul>
+            <ul class="social-media">
+              <li><a href="#"><img src="../static/Images/1.png"></a></li>
+              <li><a href="#"><img src="../static/Images/2.png"></a></li>
+              <li><a href="#"><img src="../static/Images/3.png"></a></li>
+              <li><a href="#"><img src="../static/Images/4.png"></a></li>
+              <li><a href="#"><img src="../static/Images/5.png"></a></li>
+            </ul>
+          </div>
+          <form action="{% url 'contactInfo' %}" method="POST">
+            {% csrf_token %}
+            <div class="contactform">
+              <h2>Send A Message</h2>
+              <div class="formbox">
+                <div class="inputbox w50">
+                  <input type="text" name="firstName" required>
+                  <span>First Name</span>
+                </div>
+                <div class="inputbox w50">
+                  <input type="text" name="lastName" required>
+                  <span>Last Name</span>
+                </div>
+                <div class="inputbox w50">
+                 <input type="email" name="email" required>
+                 <span>Email Address</span>
+                </div>
+                <div class="inputbox w50">
+                  <input type="text" name="phoneNo" required>
+                  <span>Mobile Number</span>
+                </div>
+                <div class="inputbox w100">
+                  <textarea name="userMessage" required></textarea>
+                  <span>Write your message here...</span>
+                </div>
+                <div class="inputbox w50">
+                  <input type="submit" value="Send">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="JS/scripts.js"></script>
+    </body>
+    </html>
+ 
+
+
